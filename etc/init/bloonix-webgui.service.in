@@ -1,0 +1,17 @@
+[Unit]
+Description=Bloonix WebGUI
+After=network.target
+
+[Service]
+Type=forking
+PIDFile=@@RUNDIR@@/bloonix/bloonix-webgui.pid
+ExecStartPre=@@USRLIBDIR@@/bloonix/bin/bloonix-pre-start @@CACHEDIR@@/bloonix @@LIBDIR@@/bloonix @@LOGDIR@@/bloonix @@RUNDIR@@/bloonix
+ExecStart=@@SRVDIR@@/bloonix/webgui/scripts/bloonix-webgui --pid-file @@RUNDIR@@/bloonix/bloonix-webgui.pid --config-file @@CONFDIR@@/bloonix/webgui/main.conf
+ExecReload=/bin/kill -1 $MAINPID
+ExecStop=/bin/kill -15 $MAINPID
+PrivateTmp=true
+TimeoutStartSec=5
+TimeoutStopSec=30
+
+[Install]
+WantedBy=multi-user.target
