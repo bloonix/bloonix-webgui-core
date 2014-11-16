@@ -24,8 +24,8 @@ test:
 
 install:
 
-	./install-sh -d -m 0750 -o root -g $(GROUPNAME) $(CONFDIR)/bloonix;
-	./install-sh -d -m 0750 -o root -g $(GROUPNAME) $(CONFDIR)/bloonix/webgui;
+	./install-sh -d -m 0755 -o root -g root $(CONFDIR)/bloonix;
+	./install-sh -d -m 0755 -o root -g root $(CONFDIR)/bloonix/webgui;
 
 	./install-sh -d -m 0755 $(USRLIBDIR)/bloonix/etc/webgui;
 	./install-sh -c -m 0644 etc/bloonix/webgui/main.conf $(USRLIBDIR)/bloonix/etc/webgui/main.conf;

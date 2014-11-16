@@ -75,8 +75,11 @@ fi
 
 if [ ! -e "/etc/bloonix/webgui/main.conf" ] ; then
     mkdir -p /etc/bloonix/webgui
+    chown root:root /etc/bloonix /etc/bloonix/webgui
+    chmod 755 /etc/bloonix /etc/bloonix/webgui
     cp -a /usr/lib/bloonix/etc/webgui/main.conf /etc/bloonix/webgui/main.conf
-    chown -R root:bloonix /etc/bloonix /etc/bloonix/webgui /etc/bloonix/webgui/main.conf
+    chown -R root:bloonix /etc/bloonix/webgui/main.conf
+    chmod 640 /etc/bloonix/webgui/main.conf
 fi
 
 if [ -e "/etc/nginx" ] && [ ! -e "/etc/nginx/conf.d/bloonix-webgui.conf" ] ; then
