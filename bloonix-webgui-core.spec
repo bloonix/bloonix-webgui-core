@@ -1,6 +1,6 @@
 Summary: Bloonix core package for the WebGUI
 Name: bloonix-webgui-core
-Version: 0.2
+Version: 0.3
 Release: 1%{dist}
 License: Commercial
 Group: Utilities/System
@@ -76,7 +76,7 @@ fi
 if [ ! -e "/etc/bloonix/webgui/main.conf" ] ; then
     mkdir -p /etc/bloonix/webgui
     cp -a /usr/lib/bloonix/etc/webgui/main.conf /etc/bloonix/webgui/main.conf
-    chown -R bloonix:bloonix /etc/bloonix/webgui
+    chown -R root:bloonix /etc/bloonix /etc/bloonix/webgui /etc/bloonix/webgui/main.conf
 fi
 
 if [ -e "/etc/nginx" ] && [ ! -e "/etc/nginx/conf.d/bloonix-webgui.conf" ] ; then
@@ -124,6 +124,8 @@ rm -rf %{buildroot}
 %doc %attr(0444, root, root) %{docdir}/LICENSE
 
 %changelog
+* Sun Nov 16 2014 Jonny Schulz <js@bloonix.de> - 0.3-1
+- Fixed permissions of /etc/bloonix*.
 * Mon Nov 03 2014 Jonny Schulz <js@bloonix.de> - 0.2-1
 - Updated the license information.
 * Mon Aug 25 2014 Jonny Schulz <js@bloonix.de> - 0.1-1

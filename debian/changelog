@@ -1,3 +1,9 @@
+bloonix-webgui-core (0.3-1) unstable; urgency=low
+
+    * Fixed permissions of /etc/bloonix*.
+
+ -- Jonny Schulz <js@bloonix.de>  Sun, 16 Nov 2014 18:05:47 +0100
+
 bloonix-webgui-core (0.2-1) unstable; urgency=low
 
     * Updated the license information.

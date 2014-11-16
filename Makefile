@@ -24,6 +24,9 @@ test:
 
 install:
 
+	./install-sh -d -m 0750 -o root -g $(GROUPNAME) $(CONFDIR)/bloonix;
+	./install-sh -d -m 0750 -o root -g $(GROUPNAME) $(CONFDIR)/bloonix/webgui;
+
 	./install-sh -d -m 0755 $(USRLIBDIR)/bloonix/etc/webgui;
 	./install-sh -c -m 0644 etc/bloonix/webgui/main.conf $(USRLIBDIR)/bloonix/etc/webgui/main.conf;
 	./install-sh -c -m 0644 etc/bloonix/webgui/nginx.conf $(USRLIBDIR)/bloonix/etc/webgui/nginx.conf;
@@ -42,7 +45,7 @@ install:
 
 	if test "$(BUILDPKG)" = "0" ; then \
 		if test ! -e "$(CONFDIR)/bloonix/webgui/main.conf" ; then \
-			./install-sh -c -m 0640 -o $(USERNAME) -g $(GROUPNAME) etc/bloonix/webgui/main.conf $(CONFDIR)/bloonix/webgui/main.conf; \
+			./install-sh -c -m 0640 -o root -g $(GROUPNAME) etc/bloonix/webgui/main.conf $(CONFDIR)/bloonix/webgui/main.conf; \
 		fi; \
 	fi;
 

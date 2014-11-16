@@ -1,3 +1,7 @@
+bloonix-webgui-core (0.3) released at 2014-11-16
+
+    * Fixed permissions of /etc/bloonix*.
+
 bloonix-webgui-core (0.2) released at 2014-11-03
 
     * Updated the license information.
