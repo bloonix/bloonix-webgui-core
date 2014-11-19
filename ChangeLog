@@ -1,3 +1,7 @@
+bloonix-webgui-core (0.4) released at 2014-XX-XX
+
+    * Changed the boot facility.
+
 bloonix-webgui-core (0.3) released at 2014-11-16
 
     * Fixed permissions of /etc/bloonix*.
