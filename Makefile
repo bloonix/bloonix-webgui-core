@@ -17,6 +17,7 @@ build:
 		sed -i "s!@@CONFDIR@@!$(CONFDIR)!g" $$file; \
 		sed -i "s!@@RUNDIR@@!$(RUNDIR)!g" $$file; \
 		sed -i "s!@@SRVDIR@@!$(SRVDIR)!g" $$file; \
+		sed -i "s!@@LIBDIR@@!$(LIBDIR)!g" $$file; \
 		sed -i "s!@@LOGDIR@@!$(LOGDIR)!g" $$file; \
 	done;
 

@@ -8,6 +8,7 @@ my $o_cachedir = "/var/cache";
 my $o_confdir = "/etc";
 my $o_initdir = "/etc/init.d";
 my $o_logdir = "/var/log";
+my $o_libdir = "/var/lib";
 my $o_rundir = "/var/run";
 my $o_srvdir = "/srv";
 my $o_perl = "/usr/bin/perl";
@@ -24,6 +25,7 @@ GetOptions(
     "cachedir=s" => \$o_cachedir,
     "confdir=s" => \$o_confdir,
     "initdir=s" => \$o_initdir,
+    "libdir=s" => \$o_libdir,
     "logdir=s" => \$o_logdir,
     "rundir=s" => \$o_rundir,
     "srvdir=s" => \$o_srvdir,
@@ -57,6 +59,7 @@ PREFIX=\$(DESTDIR)$o_prefix
 CACHEDIR=\$(DESTDIR)$o_cachedir
 CONFDIR=\$(DESTDIR)$o_confdir
 INITDIR=\$(DESTDIR)$o_initdir
+LIBDIR=\$(DESTDIR)$o_libdir
 LOGDIR=\$(DESTDIR)$o_logdir
 RUNDIR=\$(DESTDIR)$o_rundir
 SRVDIR=\$(DESTDIR)$o_srvdir
