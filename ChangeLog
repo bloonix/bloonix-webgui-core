@@ -1,6 +1,7 @@
-bloonix-webgui-core (0.4) released at 2014-XX-XX
+bloonix-webgui-core (0.4) released at 2014-12-05
 
     * Changed the boot facility.
+    * Fixed @@LIBDIR@@.
 
 bloonix-webgui-core (0.3) released at 2014-11-16
 
