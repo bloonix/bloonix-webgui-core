@@ -1,6 +1,6 @@
 Summary: Bloonix core package for the WebGUI
 Name: bloonix-webgui-core
-Version: 0.4
+Version: 0.5
 Release: 1%{dist}
 License: Commercial
 Group: Utilities/System
@@ -126,6 +126,8 @@ rm -rf %{buildroot}
 %doc %attr(0444, root, root) %{docdir}/LICENSE
 
 %changelog
+* Tue Jan 13 2015 Jonny Schulz <js@bloonix.de> - 0.5-1
+- Kicked dependency postfix.
 * Fri Dec 05 2014 Jonny Schulz <js@bloonix.de> - 0.4-1
 - Changed the boot facility.
 - Fixed @@LIBDIR@@.

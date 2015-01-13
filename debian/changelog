@@ -1,3 +1,9 @@
+bloonix-webgui-core (0.5-1) unstable; urgency=low
+
+    * Kicked dependency postfix.
+
+ -- Jonny Schulz <js@bloonix.de>  Tue, 13 Jan 2015 20:02:09 +0100
+
 bloonix-webgui-core (0.4-1) unstable; urgency=low
 
     * Changed the boot facility.
