@@ -1,3 +1,7 @@
+bloonix-webgui-core (0.5) released at 2015-01-13
+
+    * Kicked dependency postfix.
+
 bloonix-webgui-core (0.4) released at 2014-12-05
 
     * Changed the boot facility.

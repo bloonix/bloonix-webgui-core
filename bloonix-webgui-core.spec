@@ -18,7 +18,6 @@ Requires: bloonix-core
 Requires: bloonix-dbi
 Requires: bloonix-fcgi
 Requires: bloonix-heaven
-Requires: postfix
 Requires: perl-JSON-XS
 Requires: perl-Time-modules
 Requires: perl(Digest::SHA)
