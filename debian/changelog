@@ -1,3 +1,9 @@
+bloonix-webgui-core (0.6-1) unstable; urgency=low
+
+    * New dependency MIME::Lite added.
+
+ -- Jonny Schulz <js@bloonix.de>  Mon, 26 Jan 2015 20:59:50 +0100
+
 bloonix-webgui-core (0.5-1) unstable; urgency=low
 
     * Kicked dependency postfix.

@@ -1,6 +1,6 @@
 Summary: Bloonix core package for the WebGUI
 Name: bloonix-webgui-core
-Version: 0.5
+Version: 0.6
 Release: 1%{dist}
 License: Commercial
 Group: Utilities/System
@@ -23,6 +23,7 @@ Requires: perl-Time-modules
 Requires: perl(Digest::SHA)
 Requires: perl(JSON)
 Requires: perl(MIME::Base64)
+Requires: perl(MIME::Lite)
 Requires: perl(Log::Handler)
 Requires: perl(Params::Validate)
 Requires: perl(Time::HiRes)
@@ -126,6 +127,8 @@ rm -rf %{buildroot}
 %doc %attr(0444, root, root) %{docdir}/LICENSE
 
 %changelog
+* Mon Jan 26 2015 Jonny Schulz <js@bloonix.de> - 0.6-1
+- New dependency MIME::Lite added.
 * Tue Jan 13 2015 Jonny Schulz <js@bloonix.de> - 0.5-1
 - Kicked dependency postfix.
 * Fri Dec 05 2014 Jonny Schulz <js@bloonix.de> - 0.4-1
