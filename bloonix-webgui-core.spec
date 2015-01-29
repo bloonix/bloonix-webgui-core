@@ -1,7 +1,7 @@
 Summary: Bloonix core package for the WebGUI
 Name: bloonix-webgui-core
 Version: 0.6
-Release: 1%{dist}
+Release: 2%{dist}
 License: Commercial
 Group: Utilities/System
 Distribution: RHEL and CentOS
@@ -90,16 +90,16 @@ if [ -e "/etc/nginx" ] && [ ! -e "/etc/nginx/conf.d/bloonix-webgui.conf" ] ; the
 fi
 
 %preun
+if [ $1 -eq 0 ]; then
 %if %{?with_systemd}
 systemctl --no-reload disable bloonix-webgui.service
 systemctl stop bloonix-webgui.service
 systemctl daemon-reload
 %else
-if [ $1 -eq 0 ]; then
     /sbin/service bloonix-webgui stop &>/dev/null || :
     /sbin/chkconfig --del bloonix-webgui
-fi
 %endif
+fi
 
 %clean
 rm -rf %{buildroot}
@@ -127,6 +127,8 @@ rm -rf %{buildroot}
 %doc %attr(0444, root, root) %{docdir}/LICENSE
 
 %changelog
+* Thu Jan 29 2015 Jonny Schulz <js@bloonix.de> - 0.6-2
+- Fixed %preun.
 * Mon Jan 26 2015 Jonny Schulz <js@bloonix.de> - 0.6-1
 - New dependency MIME::Lite added.
 * Tue Jan 13 2015 Jonny Schulz <js@bloonix.de> - 0.5-1
