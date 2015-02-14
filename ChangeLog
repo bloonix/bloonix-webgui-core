@@ -1,3 +1,7 @@
+bloonix-webgui-core (0.7) released at 2015-XX-XX
+
+    * Transfer the database configuration to /etc/bloonix/database/main.conf.
+
 bloonix-webgui-core (0.6) released at 2015-01-26
 
     * New dependency MIME::Lite added.

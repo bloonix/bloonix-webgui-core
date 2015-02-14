@@ -1,7 +1,7 @@
 Summary: Bloonix core package for the WebGUI
 Name: bloonix-webgui-core
 Version: 0.6
-Release: 2%{dist}
+Release: 1%{dist}
 License: Commercial
 Group: Utilities/System
 Distribution: RHEL and CentOS
@@ -80,6 +80,15 @@ if [ ! -e "/etc/bloonix/webgui/main.conf" ] ; then
     cp -a /usr/lib/bloonix/etc/webgui/main.conf /etc/bloonix/webgui/main.conf
     chown -R root:bloonix /etc/bloonix/webgui/main.conf
     chmod 640 /etc/bloonix/webgui/main.conf
+fi
+
+if [ ! -e "/etc/bloonix/database/main.conf" ] ; then
+    mkdir -p /etc/bloonix/database
+    chown root:root /etc/bloonix /etc/bloonix/database
+    chmod 755 /etc/bloonix /etc/bloonix/database
+    cp -a /usr/lib/bloonix/etc/database/webgui-main.conf /etc/bloonix/database/main.conf
+    chown root:bloonix /etc/bloonix/database/main.conf
+    chmod 640 /etc/bloonix/database/main.conf
 fi
 
 if [ -e "/etc/nginx" ] && [ ! -e "/etc/nginx/conf.d/bloonix-webgui.conf" ] ; then

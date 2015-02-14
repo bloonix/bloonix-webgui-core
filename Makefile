@@ -31,6 +31,7 @@ install:
 	./install-sh -d -m 0755 $(USRLIBDIR)/bloonix/etc/webgui;
 	./install-sh -c -m 0644 etc/bloonix/webgui/main.conf $(USRLIBDIR)/bloonix/etc/webgui/main.conf;
 	./install-sh -c -m 0644 etc/bloonix/webgui/nginx.conf $(USRLIBDIR)/bloonix/etc/webgui/nginx.conf;
+	./install-sh -c -m 0644 etc/bloonix/database/main.conf $(USRLIBDIR)/bloonix/etc/database/webgui-main.conf;
 
 	./install-sh -d -m 0755 $(USRLIBDIR)/bloonix/etc/init.d;
 	./install-sh -c -m 0755 etc/init/bloonix-webgui $(USRLIBDIR)/bloonix/etc/init.d/bloonix-webgui;

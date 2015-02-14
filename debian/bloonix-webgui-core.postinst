@@ -26,6 +26,15 @@ if [ ! -e "/etc/bloonix/webgui/main.conf" ] ; then
     chmod 640 /etc/bloonix/webgui/main.conf
 fi
 
+if [ ! -e "/etc/bloonix/database/main.conf" ] ; then
+    mkdir -p /etc/bloonix/database
+    chown root:root /etc/bloonix /etc/bloonix/database
+    chmod 755 /etc/bloonix /etc/bloonix/database
+    cp -a /usr/lib/bloonix/etc/database/webgui-main.conf /etc/bloonix/database/main.conf
+    chown root:bloonix /etc/bloonix/database/main.conf
+    chmod 640 /etc/bloonix/database/main.conf
+fi
+
 if [ -e "/etc/nginx/conf.d" ] && [ ! -e "/etc/nginx/conf.d/bloonix-webgui.conf" ] ; then
     cp /usr/lib/bloonix/etc/webgui/nginx.conf /etc/nginx/conf.d/bloonix-webgui.conf
     chmod 644 /etc/nginx/conf.d/bloonix-webgui.conf
