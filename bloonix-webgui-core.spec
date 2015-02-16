@@ -1,6 +1,6 @@
 Summary: Bloonix core package for the WebGUI
 Name: bloonix-webgui-core
-Version: 0.8
+Version: 0.9
 Release: 1%{dist}
 License: Commercial
 Group: Utilities/System
@@ -138,6 +138,8 @@ rm -rf %{buildroot}
 %doc %attr(0444, root, root) %{docdir}/LICENSE
 
 %changelog
+* Mon Feb 16 2015 Jonny Schulz <js@bloonix.de> - 0.9-1
+- Kicked sth_cache_enabled from database config.
 * Mon Feb 16 2015 Jonny Schulz <js@bloonix.de> - 0.8-1
 - Add parameter sth_cache_enabled to the database config.
 * Sat Feb 14 2015 Jonny Schulz <js@bloonix.de> - 0.7-1
