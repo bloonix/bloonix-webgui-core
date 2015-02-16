@@ -1,4 +1,8 @@
-bloonix-webgui-core (0.7) released at 2015-XX-XX
+bloonix-webgui-core (0.8) released at 2015-02-16
+
+    * Add parameter sth_cache_enabled to the database config.
+
+bloonix-webgui-core (0.7) released at 2015-02-14
 
     * Transfer the database configuration to /etc/bloonix/database/main.conf.
 

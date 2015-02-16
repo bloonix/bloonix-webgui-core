@@ -1,3 +1,9 @@
+bloonix-webgui-core (0.7-1) unstable; urgency=low
+
+    * Transfer the database configuration to /etc/bloonix/database/main.conf.
+
+ -- Jonny Schulz <js@bloonix.de>  Sat, 14 Feb 2015 22:15:04 +0100
+
 bloonix-webgui-core (0.6-1) unstable; urgency=low
 
     * New dependency MIME::Lite added.

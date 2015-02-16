@@ -1,6 +1,6 @@
 Summary: Bloonix core package for the WebGUI
 Name: bloonix-webgui-core
-Version: 0.6
+Version: 0.7
 Release: 1%{dist}
 License: Commercial
 Group: Utilities/System
@@ -127,6 +127,8 @@ rm -rf %{buildroot}
 %dir %attr(0755, root, root) %{blxdir}/etc/webgui
 %{blxdir}/etc/webgui/main.conf
 %{blxdir}/etc/webgui/nginx.conf
+%dir %attr(0755, root, root) %{blxdir}/etc/database
+%{blxdir}/etc/database/webgui-main.conf
 %dir %attr(0755, root, root) %{blxdir}/etc/systemd
 %{blxdir}/etc/systemd/bloonix-webgui.service
 %dir %attr(0755, root, root) %{blxdir}/etc/init.d
@@ -136,6 +138,8 @@ rm -rf %{buildroot}
 %doc %attr(0444, root, root) %{docdir}/LICENSE
 
 %changelog
+* Sat Feb 14 2015 Jonny Schulz <js@bloonix.de> - 0.7-1
+- Transfer the database configuration to /etc/bloonix/database/main.conf.
 * Thu Jan 29 2015 Jonny Schulz <js@bloonix.de> - 0.6-2
 - Fixed %preun.
 * Mon Jan 26 2015 Jonny Schulz <js@bloonix.de> - 0.6-1
