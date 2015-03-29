@@ -17,5 +17,5 @@
 
 WEBAPP=yes
 . @@USRLIBDIR@@/bloonix/bin/bloonix-init-source
-CHECK_DIRS="$CACHEDIR $LIBDIR/webgui $LOGDIR $RUNDIR"
+CHECK_DIRS="$LIBDIR/webgui $LIBDIR/ipc $LOGDIR $RUNDIR"
 __run
