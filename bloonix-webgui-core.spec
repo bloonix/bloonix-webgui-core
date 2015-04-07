@@ -63,6 +63,7 @@ getent passwd bloonix >/dev/null || /usr/sbin/useradd \
     bloonix -g bloonix -s /sbin/nologin -d /var/run/bloonix -r
 
 %post
+/usr/bin/bloonix-init-webgui
 if [ -x "/srv/bloonix/webgui/scripts/bloonix-webgui" ] ; then
 %if %{?with_systemd}
 systemctl preset bloonix-webgui.service
@@ -71,31 +72,6 @@ systemctl condrestart bloonix-webgui.service
 /sbin/chkconfig --add bloonix-webgui
 /sbin/service bloonix-webgui condrestart &>/dev/null
 %endif
-fi
-
-if [ ! -e "/etc/bloonix/webgui/main.conf" ] ; then
-    mkdir -p /etc/bloonix/webgui
-    chown root:root /etc/bloonix /etc/bloonix/webgui
-    chmod 755 /etc/bloonix /etc/bloonix/webgui
-    cp -a /usr/lib/bloonix/etc/webgui/main.conf /etc/bloonix/webgui/main.conf
-    chown -R root:bloonix /etc/bloonix/webgui/main.conf
-    chmod 640 /etc/bloonix/webgui/main.conf
-fi
-
-if [ ! -e "/etc/bloonix/database/main.conf" ] ; then
-    mkdir -p /etc/bloonix/database
-    chown root:root /etc/bloonix /etc/bloonix/database
-    chmod 755 /etc/bloonix /etc/bloonix/database
-    cp -a /usr/lib/bloonix/etc/database/webgui-main.conf /etc/bloonix/database/main.conf
-    chown root:bloonix /etc/bloonix/database/main.conf
-    chmod 640 /etc/bloonix/database/main.conf
-fi
-
-if [ -e "/etc/nginx" ] && [ ! -e "/etc/nginx/conf.d/bloonix-webgui.conf" ] ; then
-    if [ ! -e "/etc/nginx/conf.d" ] ; then
-        mkdir /etc/nginx/conf.d
-    fi
-    install -c -m 0644 /usr/lib/bloonix/etc/webgui/nginx.conf /etc/nginx/conf.d/bloonix-webgui.conf
 fi
 
 %preun
@@ -136,6 +112,7 @@ rm -rf %{buildroot}
 %dir %attr(0755, root, root) %{docdir}
 %doc %attr(0444, root, root) %{docdir}/ChangeLog
 %doc %attr(0444, root, root) %{docdir}/LICENSE
+%{_bindir}/bloonix-init-server
 
 %changelog
 * Sat Mar 21 2015 Jonny Schulz <js@bloonix.de> - 0.10-1
