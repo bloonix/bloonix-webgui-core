@@ -1,6 +1,6 @@
 Summary: Bloonix core package for the WebGUI
 Name: bloonix-webgui-core
-Version: 0.10
+Version: 0.11
 Release: 1%{dist}
 License: Commercial
 Group: Utilities/System
@@ -115,6 +115,9 @@ rm -rf %{buildroot}
 %{_bindir}/bloonix-init-server
 
 %changelog
+* Wed Apr 08 2015 Jonny Schulz <js@bloonix.de> - 0.11-1
+- Simplified the installation of self signed certificates
+  and the nginx configuration.
 * Sat Mar 21 2015 Jonny Schulz <js@bloonix.de> - 0.10-1
 - Splitted configuration for fcgi and proc manager.
 * Mon Feb 16 2015 Jonny Schulz <js@bloonix.de> - 0.9-1
