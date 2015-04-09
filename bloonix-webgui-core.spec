@@ -18,6 +18,7 @@ Requires: bloonix-core
 Requires: bloonix-dbi
 Requires: bloonix-fcgi
 Requires: bloonix-heaven
+Requires: openssl
 Requires: perl-JSON-XS
 Requires: perl-Time-modules
 Requires: perl(Digest::SHA)
@@ -112,7 +113,7 @@ rm -rf %{buildroot}
 %dir %attr(0755, root, root) %{docdir}
 %doc %attr(0444, root, root) %{docdir}/ChangeLog
 %doc %attr(0444, root, root) %{docdir}/LICENSE
-%{_bindir}/bloonix-init-server
+%{_bindir}/bloonix-init-webgui
 
 %changelog
 * Wed Apr 08 2015 Jonny Schulz <js@bloonix.de> - 0.11-1
