@@ -1,3 +1,8 @@
+bloonix-webgui-core (0.12) released at 2015-04-17
+
+    * Fixed: the nginx configuration will now be created
+      after the initial setup.
+
 bloonix-webgui-core (0.11) released at 2015-04-08
 
     * Simplified the installation of self signed certificates
