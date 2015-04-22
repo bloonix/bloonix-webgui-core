@@ -1,3 +1,10 @@
+bloonix-webgui-core (0.12-1) unstable; urgency=low
+
+    * Fixed: the nginx configuration will now be created
+      after the initial setup.
+
+ -- Jonny Schulz <js@bloonix.de>  Fri, 17 Apr 2015 21:38:52 +0200
+
 bloonix-webgui-core (0.11-1) unstable; urgency=low
 
     * Simplified the installation of self signed certificates
