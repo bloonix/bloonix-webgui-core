@@ -1,0 +1,31 @@
+#!/bin/sh
+
+if [ ! -e "/etc/bloonix/webgui/main.conf" ] ; then
+    mkdir -p /etc/bloonix/webgui
+    chown root:root /etc/bloonix /etc/bloonix/webgui
+    chmod 755 /etc/bloonix /etc/bloonix/webgui
+    cp /usr/lib/bloonix/etc/webgui/main.conf /etc/bloonix/webgui/main.conf
+    cp /usr/lib/bloonix/etc/webgui/nginx.conf /etc/bloonix/webgui/nginx.conf
+    chown -R root:bloonix /etc/bloonix/webgui/main.conf /etc/bloonix/webgui/nginx.conf
+    chmod 640 /etc/bloonix/webgui/main.conf /etc/bloonix/webgui/nginx.conf
+fi
+
+if [ ! -e "/etc/bloonix/database/main.conf" ] ; then
+    mkdir -p /etc/bloonix/database
+    chown root:root /etc/bloonix /etc/bloonix/database
+    chmod 755 /etc/bloonix /etc/bloonix/database
+    cp /usr/lib/bloonix/etc/database/webgui-main.conf /etc/bloonix/database/main.conf
+    chown root:bloonix /etc/bloonix/database/main.conf
+    chmod 640 /etc/bloonix/database/main.conf
+fi
+
+if [ ! -e "/etc/bloonix/webgui/pki" ] ; then
+    echo "create /etc/bloonix/webgui/pki/*"
+    mkdir -p /etc/bloonix/webgui/pki
+    chown root:root /etc/bloonix/webgui/pki
+    chmod 750 /etc/bloonix/webgui/pki
+    openssl req -new -x509 -nodes -out /etc/bloonix/webgui/pki/server.cert -keyout /etc/bloonix/webgui/pki/server.key -batch
+    chown root:root /etc/bloonix/webgui/pki/server.key /etc/bloonix/webgui/pki/server.cert
+    chmod 640 /etc/bloonix/webgui/pki/server.key /etc/bloonix/webgui/pki/server.cert
+fi
+
