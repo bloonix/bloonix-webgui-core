@@ -28,6 +28,7 @@ Requires: perl(MIME::Lite)
 Requires: perl(Log::Handler)
 Requires: perl(Params::Validate)
 Requires: perl(Time::HiRes)
+Requires: perl(Term::ReadKey)
 AutoReqProv: no
 
 %description
