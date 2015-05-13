@@ -1,6 +1,7 @@
-bloonix-webgui-core (0.13) released at 2015-XX-XX
+bloonix-webgui-core (0.13) released at 2015-05-07
 
     * Added dependency Term::Readkey.
+    * Some config changes in wtrm_api.
 
 bloonix-webgui-core (0.12) released at 2015-04-17
 

@@ -1,6 +1,6 @@
 Summary: Bloonix core package for the WebGUI
 Name: bloonix-webgui-core
-Version: 0.12
+Version: 0.13
 Release: 1%{dist}
 License: Commercial
 Group: Utilities/System
@@ -117,6 +117,8 @@ rm -rf %{buildroot}
 %{_bindir}/bloonix-init-webgui
 
 %changelog
+* Thu May 07 2015 Jonny Schulz <js@bloonix.de> - 0.13-1
+- Added dependency Term::Readkey.
 * Fri Apr 17 2015 Jonny Schulz <js@bloonix.de> - 0.12-1
 - Fixed: the nginx configuration will now be created
   after the initial setup.

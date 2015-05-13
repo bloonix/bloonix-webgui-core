@@ -1,3 +1,9 @@
+bloonix-webgui-core (0.13-1) unstable; urgency=low
+
+    * Added dependency Term::Readkey.
+
+ -- Jonny Schulz <js@bloonix.de>  Thu, 07 May 2015 14:32:16 +0200
+
 bloonix-webgui-core (0.12-1) unstable; urgency=low
 
     * Fixed: the nginx configuration will now be created
