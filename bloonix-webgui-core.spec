@@ -120,6 +120,7 @@ rm -rf %{buildroot}
 %changelog
 * Tue Aug 18 2015 Jonny Schulz <js@bloonix.de> - 0.14-1
 - Fixed %preun section in spec file.
+- Moved the creation of user bloonix into the core package.
 * Thu May 07 2015 Jonny Schulz <js@bloonix.de> - 0.13-1
 - Added dependency Term::Readkey.
 * Fri Apr 17 2015 Jonny Schulz <js@bloonix.de> - 0.12-1
