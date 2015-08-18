@@ -59,11 +59,6 @@ install -p -D -m 0644 %{buildroot}%{blxdir}/etc/systemd/bloonix-webgui.service %
 install -p -D -m 0755 %{buildroot}%{blxdir}/etc/init.d/bloonix-webgui %{buildroot}%{initdir}/bloonix-webgui
 %endif
 
-%pre
-getent group bloonix >/dev/null || /usr/sbin/groupadd bloonix
-getent passwd bloonix >/dev/null || /usr/sbin/useradd \
-    bloonix -g bloonix -s /sbin/nologin -d /var/run/bloonix -r
-
 %post
 /usr/bin/bloonix-init-webgui
 
