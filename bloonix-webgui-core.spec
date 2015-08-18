@@ -1,6 +1,6 @@
 Summary: Bloonix core package for the WebGUI
 Name: bloonix-webgui-core
-Version: 0.13
+Version: 0.14
 Release: 1%{dist}
 License: Commercial
 Group: Utilities/System
@@ -53,7 +53,7 @@ mkdir -p ${RPM_BUILD_ROOT}%{docdir}
 install -c -m 0444 LICENSE ${RPM_BUILD_ROOT}%{docdir}/
 install -c -m 0444 ChangeLog ${RPM_BUILD_ROOT}%{docdir}/
 
-%if %{?with_systemd}
+%if 0%{?with_systemd}
 install -p -D -m 0644 %{buildroot}%{blxdir}/etc/systemd/bloonix-webgui.service %{buildroot}%{_unitdir}/bloonix-webgui.service
 %else
 install -p -D -m 0755 %{buildroot}%{blxdir}/etc/init.d/bloonix-webgui %{buildroot}%{initdir}/bloonix-webgui
@@ -66,27 +66,33 @@ getent passwd bloonix >/dev/null || /usr/sbin/useradd \
 
 %post
 /usr/bin/bloonix-init-webgui
+
+%if 0%{?with_systemd}
+%systemd_post bloonix-webgui.service
 if [ -x "/srv/bloonix/webgui/scripts/bloonix-webgui" ] ; then
-%if %{?with_systemd}
-systemctl preset bloonix-webgui.service
-systemctl condrestart bloonix-webgui.service
+    systemctl condrestart bloonix-webgui.service
+fi
 %else
 /sbin/chkconfig --add bloonix-webgui
-/sbin/service bloonix-webgui condrestart &>/dev/null
-%endif
+if [ -x "/srv/bloonix/webgui/scripts/bloonix-webgui" ] ; then
+    /sbin/service bloonix-webgui condrestart &>/dev/null
 fi
+%endif
 
 %preun
-if [ $1 -eq 0 ]; then
-%if %{?with_systemd}
-systemctl --no-reload disable bloonix-webgui.service
-systemctl stop bloonix-webgui.service
-systemctl daemon-reload
+%if 0%{?with_systemd}
+%systemd_preun bloonix-webgui.service
 %else
+if [ $1 -eq 0 ]; then
     /sbin/service bloonix-webgui stop &>/dev/null || :
     /sbin/chkconfig --del bloonix-webgui
-%endif
 fi
+%endif
+
+%postun
+%if 0%{?with_systemd}
+%systemd_postun
+%endif
 
 %clean
 rm -rf %{buildroot}
@@ -94,7 +100,7 @@ rm -rf %{buildroot}
 %files
 %defattr(-,root,root)
 
-%if %{?with_systemd} == 1
+%if 0%{?with_systemd}
 %{_unitdir}/bloonix-webgui.service
 %else
 %{initdir}/bloonix-webgui
@@ -117,6 +123,8 @@ rm -rf %{buildroot}
 %{_bindir}/bloonix-init-webgui
 
 %changelog
+* Tue Aug 18 2015 Jonny Schulz <js@bloonix.de> - 0.14-1
+- Fixed %preun section in spec file.
 * Thu May 07 2015 Jonny Schulz <js@bloonix.de> - 0.13-1
 - Added dependency Term::Readkey.
 * Fri Apr 17 2015 Jonny Schulz <js@bloonix.de> - 0.12-1
