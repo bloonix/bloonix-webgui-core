@@ -17,7 +17,7 @@ Requires: bloonix-agent
 Requires: bloonix-core >= 0.28
 Requires: bloonix-dbi >= 0.11
 Requires: bloonix-fcgi
-Requires: bloonix-heaven
+Requires: bloonix-heaven >= 0.13
 Requires: openssl
 Requires: perl-JSON-XS
 Requires: perl-Time-modules
