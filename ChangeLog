@@ -1,3 +1,7 @@
+bloonix-webgui-core (0.15) released at 2015-10-01
+
+    * Added new dependency to bloonix-core 0.15.
+
 bloonix-webgui-core (0.14) released at 2015-08-18
 
     * Fixed %preun section in spec file.

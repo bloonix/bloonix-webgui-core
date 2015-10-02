@@ -1,6 +1,6 @@
 Summary: Bloonix core package for the WebGUI
 Name: bloonix-webgui-core
-Version: 0.14
+Version: 0.15
 Release: 1%{dist}
 License: Commercial
 Group: Utilities/System
@@ -14,8 +14,8 @@ BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root
 
 Source0: http://download.bloonix.de/sources/%{name}-%{version}.tar.gz
 Requires: bloonix-agent
-Requires: bloonix-core
-Requires: bloonix-dbi
+Requires: bloonix-core >= 0.28
+Requires: bloonix-dbi >= 0.11
 Requires: bloonix-fcgi
 Requires: bloonix-heaven
 Requires: openssl
@@ -118,6 +118,8 @@ rm -rf %{buildroot}
 %{_bindir}/bloonix-init-webgui
 
 %changelog
+* Fri Oct 02 2015 Jonny Schulz <js@bloonix.de> - 0.15-1
+- Added new dependency to bloonix-core 0.15.
 * Tue Aug 18 2015 Jonny Schulz <js@bloonix.de> - 0.14-1
 - Fixed %preun section in spec file.
 - Moved the creation of user bloonix into the core package.
