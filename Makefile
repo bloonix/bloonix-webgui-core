@@ -41,6 +41,7 @@ install:
 	./install-sh -c -m 0755 etc/init/bloonix-webgui.service $(USRLIBDIR)/bloonix/etc/systemd/bloonix-webgui.service;
 
 	if test -d /usr/lib/systemd/system ; then \
+		./install-sh -d -m 0755 $(DESTDIR)/usr/lib/systemd/system/; \
 		./install-sh -c -m 0644 etc/init/bloonix-webgui.service $(DESTDIR)/usr/lib/systemd/system/; \
 	elif test -d /etc/init.d ; then \
 		./install-sh -c -m 0755 etc/init/bloonix-webgui $(INITDIR)/bloonix-webgui; \
