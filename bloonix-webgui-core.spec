@@ -118,6 +118,8 @@ rm -rf %{buildroot}
 %{_bindir}/bloonix-init-webgui
 
 %changelog
+* Mon Nov 16 2015 Jonny Schulz <js@bloonix.de> - 0.15-1
+- Added new dependency to bloonix-core 0.28.
 * Tue Aug 18 2015 Jonny Schulz <js@bloonix.de> - 0.14-1
 - Fixed %preun section in spec file.
 - Moved the creation of user bloonix into the core package.

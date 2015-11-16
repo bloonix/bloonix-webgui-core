@@ -1,3 +1,9 @@
+bloonix-webgui-core (0.15-1) unstable; urgency=low
+
+    * Added new dependency to bloonix-core 0.28.
+
+ -- Jonny Schulz <js@bloonix.de>  Mon, 16 Nov 2015 13:01:38 +0100
+
 bloonix-webgui-core (0.14-1) unstable; urgency=low
 
     * Fixed %preun section in spec file.
