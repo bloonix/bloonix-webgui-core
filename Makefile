@@ -40,7 +40,7 @@ install:
 	./install-sh -d -m 0755 $(USRLIBDIR)/bloonix/etc/systemd;
 	./install-sh -c -m 0755 etc/init/bloonix-webgui.service $(USRLIBDIR)/bloonix/etc/systemd/bloonix-webgui.service;
 
-	if test -d /usr/lib/systemd/system ; then \
+	if test -d /usr/lib/systemd ; then \
 		./install-sh -d -m 0755 $(DESTDIR)/usr/lib/systemd/system/; \
 		./install-sh -c -m 0644 etc/init/bloonix-webgui.service $(DESTDIR)/usr/lib/systemd/system/; \
 	elif test -d /etc/init.d ; then \
@@ -51,6 +51,9 @@ install:
 		if test ! -e "$(CONFDIR)/bloonix/webgui/main.conf" ; then \
 			./install-sh -c -m 0640 -o root -g $(GROUPNAME) etc/bloonix/webgui/main.conf $(CONFDIR)/bloonix/webgui/main.conf; \
 			./install-sh -c -m 0640 -o root -g $(GROUPNAME) etc/bloonix/webgui/nginx.conf $(CONFDIR)/bloonix/webgui/nginx.conf; \
+		fi; \
+		if test -d /usr/lib/systemd ; then \
+			systemctl daemon-reload; \
 		fi; \
 	fi;
 
