@@ -1,3 +1,7 @@
+bloonix-webgui-core (0.16) released at 2015-03-20
+
+    * Changed dependency to bloonix-dbi-0.13.
+
 bloonix-webgui-core (0.15) released at 2015-11-15
 
     * Added new dependency to bloonix-core 0.28.

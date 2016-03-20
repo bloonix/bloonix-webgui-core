@@ -1,3 +1,9 @@
+bloonix-webgui-core (0.16-1) unstable; urgency=low
+
+    * Changed dependency to bloonix-dbi-0.13.
+
+ -- Jonny Schulz <js@bloonix.de>  Sun, 20 Mar 2016 17:08:55 +0100
+
 bloonix-webgui-core (0.15-1) unstable; urgency=low
 
     * Added new dependency to bloonix-core 0.28.

@@ -49,8 +49,8 @@ install:
 
 	if test "$(BUILDPKG)" = "0" ; then \
 		if test ! -e "$(CONFDIR)/bloonix/webgui/main.conf" ; then \
-			./install-sh -c -m 0640 -o root -g $(GROUPNAME) etc/bloonix/webgui/main.conf $(CONFDIR)/bloonix/webgui/main.conf; \
-			./install-sh -c -m 0640 -o root -g $(GROUPNAME) etc/bloonix/webgui/nginx.conf $(CONFDIR)/bloonix/webgui/nginx.conf; \
+			./install-sh -c -m 0640 -o root -g bloonix etc/bloonix/webgui/main.conf $(CONFDIR)/bloonix/webgui/main.conf; \
+			./install-sh -c -m 0640 -o root -g bloonix etc/bloonix/webgui/nginx.conf $(CONFDIR)/bloonix/webgui/nginx.conf; \
 		fi; \
 		if test -d /usr/lib/systemd ; then \
 			systemctl daemon-reload; \
