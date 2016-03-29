@@ -1,6 +1,6 @@
 Summary: Bloonix core package for the WebGUI
 Name: bloonix-webgui-core
-Version: 0.17
+Version: 0.18
 Release: 1%{dist}
 License: Commercial
 Group: Utilities/System
@@ -121,6 +121,8 @@ rm -rf %{buildroot}
 %dir %attr(0755, bloonix, root) %{rundir}
 
 %changelog
+* Tue Mar 29 2016 Jonny Schulz <js@bloonix.de> - 0.18-1
+- Fixed systemctl errors.
 * Mon Mar 28 2016 Jonny Schulz <js@bloonix.de> - 0.17-1
 - Fixed systemd/sysvinit/upstart installation routines.
 * Sun Mar 20 2016 Jonny Schulz <js@bloonix.de> - 0.16-1
