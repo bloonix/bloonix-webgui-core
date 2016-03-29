@@ -29,3 +29,6 @@ if [ ! -e "/etc/bloonix/webgui/pki" ] ; then
     chmod 640 /etc/bloonix/webgui/pki/server.key /etc/bloonix/webgui/pki/server.cert
 fi
 
+chown bloonix /var/log/bloonix /var/run/bloonix
+chmod 750 /var/log/bloonix
+chmod 755 /var/run/bloonix

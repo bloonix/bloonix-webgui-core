@@ -1,6 +1,6 @@
 Summary: Bloonix core package for the WebGUI
 Name: bloonix-webgui-core
-Version: 0.16
+Version: 0.17
 Release: 1%{dist}
 License: Commercial
 Group: Utilities/System
@@ -38,6 +38,8 @@ bloonix-webgui-core provides core packages for the Bloonix-WebGUI.
 %define initdir %{_sysconfdir}/init.d
 %define docdir %{_docdir}/%{name}-%{version}
 %define blxdir /usr/lib/bloonix
+%define logdir /var/log/bloonix
+%define rundir /var/run/bloonix
 
 %prep
 %setup -q -n %{name}-%{version}
@@ -61,7 +63,6 @@ install -p -D -m 0755 %{buildroot}%{blxdir}/etc/init.d/bloonix-webgui %{buildroo
 
 %post
 /usr/bin/bloonix-init-webgui
-
 %if 0%{?with_systemd}
 %systemd_post bloonix-webgui.service
 if [ -x "/srv/bloonix/webgui/scripts/bloonix-webgui" ] ; then
@@ -116,8 +117,12 @@ rm -rf %{buildroot}
 %doc %attr(0444, root, root) %{docdir}/ChangeLog
 %doc %attr(0444, root, root) %{docdir}/LICENSE
 %{_bindir}/bloonix-init-webgui
+%dir %attr(0750, bloonix, root) %{logdir}
+%dir %attr(0755, bloonix, root) %{rundir}
 
 %changelog
+* Mon Mar 28 2016 Jonny Schulz <js@bloonix.de> - 0.17-1
+- Fixed systemd/sysvinit/upstart installation routines.
 * Sun Mar 20 2016 Jonny Schulz <js@bloonix.de> - 0.16-1
 - Changed dependency to bloonix-dbi-0.13.
 * Mon Nov 16 2015 Jonny Schulz <js@bloonix.de> - 0.15-1

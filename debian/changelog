@@ -1,3 +1,9 @@
+bloonix-webgui-core (0.17-1) unstable; urgency=low
+
+    * Fixed systemd/sysvinit/upstart installation routines.
+
+ -- Jonny Schulz <js@bloonix.de>  Mon, 28 Mar 2016 19:35:59 +0200
+
 bloonix-webgui-core (0.16-1) unstable; urgency=low
 
     * Changed dependency to bloonix-dbi-0.13.

@@ -4,7 +4,6 @@ use warnings;
 use Getopt::Long qw(:config no_ignore_case);
 
 my $o_prefix = "/usr/local";
-my $o_cachedir = "/var/cache";
 my $o_confdir = "/etc";
 my $o_initdir = "/etc/init.d";
 my $o_logdir = "/var/log";
@@ -22,7 +21,6 @@ if (!-e "Makefile") {
 
 GetOptions(
     "prefix=s" => \$o_prefix,
-    "cachedir=s" => \$o_cachedir,
     "confdir=s" => \$o_confdir,
     "initdir=s" => \$o_initdir,
     "libdir=s" => \$o_libdir,
@@ -38,7 +36,6 @@ if ($o_help) {
     print "Usage: perl Configure.PL [ OPTIONS ]\n\n";
     print "Configure options:\n\n";
     print "  --prefix DIR (default: $o_prefix)\n";
-    print "  --cachedir DIR (default: $o_cachedir)\n";
     print "  --confdir DIR (default: $o_confdir)\n";
     print "  --initdir DIR (default: $o_initdir)\n";
     print "  --logdir DIR (default: $o_logdir)\n";
@@ -56,7 +53,6 @@ print "Writing Makefile.config ...\n";
 print $fh <<EOF;
 # Base paths
 PREFIX=\$(DESTDIR)$o_prefix
-CACHEDIR=\$(DESTDIR)$o_cachedir
 CONFDIR=\$(DESTDIR)$o_confdir
 INITDIR=\$(DESTDIR)$o_initdir
 LIBDIR=\$(DESTDIR)$o_libdir
