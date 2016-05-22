@@ -1,3 +1,12 @@
+bloonix-webgui-core (0.20) released at 2015-05-22
+
+    * Implemented parameter sendmail for section email.
+
+bloonix-webgui-core (0.19) released at 2015-04-04
+
+    * Check /bin/systemctl instead of /usr/lib/systemd to
+      determine if systemd is used.
+
 bloonix-webgui-core (0.18) released at 2015-03-29
 
     * Fixed systemctl errors.
