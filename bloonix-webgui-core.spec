@@ -1,6 +1,6 @@
 Summary: Bloonix core package for the WebGUI
 Name: bloonix-webgui-core
-Version: 0.19
+Version: 0.20
 Release: 1%{dist}
 License: Commercial
 Group: Utilities/System
@@ -121,6 +121,8 @@ rm -rf %{buildroot}
 %dir %attr(0755, bloonix, root) %{rundir}
 
 %changelog
+* Sun May 22 2016 Jonny Schulz <js@bloonix.de> - 0.20-1
+- Implemented parameter sendmail for section email.
 * Mon Apr 04 2016 Jonny Schulz <js@bloonix.de> - 0.19-1
 - Check /bin/systemctl instead of /usr/lib/systemd to
   determine if systemd is used.

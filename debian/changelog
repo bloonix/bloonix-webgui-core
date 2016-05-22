@@ -1,3 +1,9 @@
+bloonix-webgui-core (0.20-1) unstable; urgency=low
+
+    * Implemented parameter sendmail for section email.
+
+ -- Jonny Schulz <js@bloonix.de>  Sun, 22 May 2016 13:54:43 +0200
+
 bloonix-webgui-core (0.19-1) unstable; urgency=low
 
     * Check /bin/systemctl instead of /usr/lib/systemd to
